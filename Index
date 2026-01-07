@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Nícol 💖</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Corazones flotando */
+.heart {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #ff6b81;
+  transform: rotate(45deg);
+  animation: float 8s linear infinite;
+  opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #ff6b81;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -7px;
+  left: 0;
+}
+
+.heart::after {
+  left: -7px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.7; }
+  100% {
+    transform: translateY(-10vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Tarjeta */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  padding: 40px 30px;
+  width: 92%;
+  max-width: 460px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  font-size: 1.9em;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7;
+}
+
+button {
+  margin: 12px;
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.yes {
+  background: #ff6b81;
+  color: #fff;
+}
+
+.no {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+.hidden {
+  display: none;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+iframe {
+  margin-top: 20px;
+  border-radius: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Corazones -->
+<script>
+for(let i=0; i<30; i++){
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDelay = Math.random() * 8 + "s";
+  heart.style.animationDuration = 6 + Math.random() * 6 + "s";
+  document.body.appendChild(heart);
+}
+</script>
+
+<div class="card">
+  <h1>Para ti, Nícol Avril Vargas Gutiérrez 💖</h1>
+
+  <p>
+    Desde que llegaste a mi vida,<br>
+    todo se siente más vivo, más real.<br>
+    Tu risa, tu energía, tu forma de ser…<br>
+    me enamoran cada día un poco más.
+    Gracias por todo lo que me diste en tan poco tiempo <br>
+    Mi batatita preciosa 
+  </p>
+
+  <p>
+    Ya nos dijimos “te amo”,<br>
+    y no fue por costumbre,<br>
+    fue porque lo sentimos de verdad.
+  </p>
+
+  <h2> BATATITA ¿Quieres ser mi novia? </h2>
+
+  <button class="yes" onclick="respuestaSi()">Sí 💕</button>
+  <button class="no" onclick="respuestaNo()">No 🙈</button>
+
+  <div id="si" class="hidden">
+    <p>
+      Entonces es oficial…<br>
+      prometo cuidarte, hacerte reír,<br>
+      acompañarte y amarte bonito TE AMO
+    </p>
+    <p><strong>Te amo, Nícol.</strong></p>
+  </div>
+
+  <div id="no" class="hidden">
+    <p>
+      Está bien 💗<br>
+      Gracias por ser honesta.<br>
+      Igual me quedo agradecido<br>
+      de tenerte en mi vida 
+    </p>
+  </div>
+
+  <!-- Música -->
+  <iframe width="100%" height="80"
+    src="https://www.youtube.com/embed/r3Pr1_v7hsw"
+    title="I Want to Know What Love Is"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+</div>
+
+<script>
+function respuestaSi() {
+  document.getElementById("si").style.display = "block";
+  document.getElementById("no").style.display = "none";
+}
+
+function respuestaNo() {
+  document.getElementById("no").style.display = "block";
+  document.getElementById("si").style.display = "none";
+}
+</script>
+
+</body>
+</html>
